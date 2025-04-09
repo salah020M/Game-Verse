@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVerse Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
+      --primary: #ff3cac;
+      --secondary: #784ba0;
+      --accent: #2b5876;
+      --light: #fff;
+      --dark: #1f1f2e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header h1 {
+      font-size: 28px;
+      color: var(--primary);
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--light);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 60px;
+      gap: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero-text h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .hero-text button {
+      background: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .hero-text button:hover {
+      transform: scale(1.05);
+    }
+    .hero img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+    .features {
+      padding: 80px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      background: #121212;
+    }
+    .feature {
+      background: #1e1e2f;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(255, 60, 172, 0.2);
+    }
+    .feature img {
+      height: 64px;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    .feature p {
+      font-size: 16px;
+      color: #ccc;
+    }
+    .downloads {
+      text-align: center;
+      padding: 60px;
+      background: #1f1f2e;
+    }
+    .downloads h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    .downloads a img {
+      height: 60px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+    .downloads a img:hover {
+      transform: scale(1.05);
+    }
+    .subscribe {
+      background: #2b2b3c;
+      padding: 60px;
+      text-align: center;
+    }
+    .subscribe h2 {
+      color: var(--primary);
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .subscribe form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+    .subscribe input {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+    }
+    .subscribe button {
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+      color: #777;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GameVerse</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#games">Games</a>
+      <a href="#features">Features</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Level Up Your Play</h2>
+      <p>Dive into a world of thrilling mobile games, power-ups, and endless excitement. Join the GameVerse community now!</p>
+      <button onclick="window.location.href='https://play.google.com/store'">Start Playing</button>
+    </div>
+    <img src="https://blockworks.co/_next/image?url=https%3A%2F%2Fblockworks-co.imgix.net%2Fwp-content%2Fuploads%2F2023%2F10%2FMobile-gaming.jpg&w=1920&q=75" alt="Mobile Gaming" />
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/controller.png" alt="Game Controller" />
+      <h3>Wide Game Library</h3>
+      <p>Explore hundreds of action, adventure, puzzle, and strategy games all in one place.</p>
+    </div>
+    <div class="feature">
+      <img src="https://s3-alpha.figma.com/hub/file/1761326111/ec059bfb-4b20-4cc6-a1dd-1b75221980e4-cover.png" alt="Leaderboards" />
+      <h3>Global Leaderboards</h3>
+      <p>Climb the charts, compete with friends, and become a legend across the globe.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/trophy.png" alt="Trophies" />
+      <h3>Daily Rewards</h3>
+      <p>Earn trophies, coins, and bonuses every time you log in and play.</p>
+    </div>
+  </section>
+
+  <section class="downloads">
+    <h2>Download Our App</h2>
+    <a href="https://play.google.com/store" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store" />
+    </a>
+    <a href="https://www.apple.com/app-store/" target="_blank">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store" />
+    </a>
+  </section>
+
+  <section class="subscribe" id="contact">
+    <h2>Stay Updated</h2>
+    <form action="https://formspree.io/f/xwplaoee" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 GameVerse. Play More. Win More.
+  </footer>
+</body>
+</html>
