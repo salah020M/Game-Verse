@@ -19,9 +19,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: 'Orbitron', sans-serif;
       background: var(--bg-gradient);
@@ -120,24 +117,6 @@
       font-size: 16px;
       color: #ccc;
     }
-    .downloads {
-      text-align: center;
-      padding: 60px;
-      background: #1f1f2e;
-    }
-    .downloads h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-    .downloads a img {
-      height: 60px;
-      margin: 10px;
-      transition: transform 0.3s;
-    }
-    .downloads a img:hover {
-      transform: scale(1.05);
-    }
     .subscribe {
       background: #2b2b3c;
       padding: 60px;
@@ -183,6 +162,52 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* New Games Section */
+    .games-list {
+      background: #1f1f2e;
+      padding: 60px;
+      text-align: center;
+    }
+    .games-list h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: var(--primary);
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+    .game-card {
+      background: #2a2a3d;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(255, 60, 172, 0.2);
+    }
+    .game-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .game-card h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .game-card p {
+      color: #ccc;
+      font-size: 15px;
+    }
+
   </style>
 </head>
 <body>
@@ -199,7 +224,7 @@
     <div class="hero-text">
       <h2>Level Up Your Play</h2>
       <p>Dive into a world of thrilling mobile games, power-ups, and endless excitement. Join the GameVerse community now!</p>
-      <button id="scrollToGames">Start Playing</button>
+      <button onclick="document.getElementById('games').scrollIntoView({ behavior: 'smooth' })">Start Playing</button>
     </div>
     <img src="https://blockworks.co/_next/image?url=https%3A%2F%2Fblockworks-co.imgix.net%2Fwp-content%2Fuploads%2F2023%2F10%2FMobile-gaming.jpg&w=1920&q=75" alt="Mobile Gaming" />
   </section>
@@ -222,20 +247,46 @@
     </div>
   </section>
 
-  <!-- GAMES SECTION (TARGET) -->
-  <section id="games" style="padding: 100px 60px; background: #111;">
-    <h2 style="color: var(--primary); font-size: 36px; text-align: center; margin-bottom: 20px;">🎮 Our Games</h2>
-    <p style="color: #ccc; text-align: center;">Exciting games are waiting for you here. This is your playground!</p>
-  </section>
-
-  <section class="downloads">
-    <h2>Download Our App</h2>
-    <a href="https://play.google.com/store" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store" />
-    </a>
-    <a href="https://www.apple.com/app-store/" target="_blank">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store" />
-    </a>
+  <!-- Explore Our Games Section -->
+  <section class="games-list" id="games">
+    <h2>Explore Our Games</h2>
+    <div class="game-grid">
+      <div class="game-card">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x180?text=Game+1" alt="Game 1">
+        </a>
+        <h3>Game Title 1</h3>
+        <p>Short description of Game 1 goes here. Action-packed fun awaits!</p>
+      </div>
+      <div class="game-card">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x180?text=Game+2" alt="Game 2">
+        </a>
+        <h3>Game Title 2</h3>
+        <p>Explore new worlds and thrilling gameplay in Game 2.</p>
+      </div>
+      <div class="game-card">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x180?text=Game+3" alt="Game 3">
+        </a>
+        <h3>Game Title 3</h3>
+        <p>Challenge your mind with puzzles and strategic play.</p>
+      </div>
+      <div class="game-card">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x180?text=Game+4" alt="Game 4">
+        </a>
+        <h3>Game Title 4</h3>
+        <p>Multiplayer madness and non-stop excitement!</p>
+      </div>
+      <div class="game-card">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x180?text=Game+5" alt="Game 5">
+        </a>
+        <h3>Game Title 5</h3>
+        <p>Race to the top in this high-speed, action-packed game.</p>
+      </div>
+    </div>
   </section>
 
   <section class="subscribe" id="contact">
@@ -249,15 +300,5 @@
   <footer>
     &copy; 2025 GameVerse. Play More. Win More.
   </footer>
-
-  <!-- ✅ Smooth scroll script -->
-  <script>
-    document.getElementById("scrollToGames").addEventListener("click", function () {
-      const target = document.getElementById("games");
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
 </body>
 </html>
