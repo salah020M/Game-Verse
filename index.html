@@ -195,16 +195,14 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Level Up Your Play</h2>
-      <p>Dive into a world of thrilling mobile games, power-ups, and endless excitement. Join the GameVerse community now!</p>
-      <button onclick="document.getElementById('games').scrollIntoView({ behavior: 'smooth' });">Start Playing
-</button>
-    </div>
-    <img src="https://blockworks.co/_next/image?url=https%3A%2F%2Fblockworks-co.imgix.net%2Fwp-content%2Fuploads%2F2023%2F10%2FMobile-gaming.jpg&w=1920&q=75" alt="Mobile Gaming" />
-  </section>
-
+<section class="hero">
+  <div class="hero-text">
+    <h2>Level Up Your Play</h2>
+    <p>Dive into a world of thrilling mobile games, power-ups, and endless excitement. Join the GameVerse community now!</p>
+    <button id="scrollToGames">Start Playing</button>
+  </div>
+  <img src="https://blockworks.co/_next/image?url=https%3A%2F%2Fblockworks-co.imgix.net%2Fwp-content%2Fuploads%2F2023%2F10%2FMobile-gaming.jpg&w=1920&q=75" alt="Mobile Gaming" />
+</section>
   <section class="features" id="features">
     <div class="feature">
       <img src="https://img.icons8.com/fluency/96/controller.png" alt="Game Controller" />
@@ -232,21 +230,10 @@
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store" />
     </a>
   </section>
-  <section id="games" style="padding: 80px 60px; background: #111;">
-  <h2 style="text-align:center; font-size: 36px; color: var(--primary); margin-bottom: 40px;">Explore Our Games</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-    <div style="background: #1e1e2f; padding: 20px; border-radius: 12px; text-align: center;">
-      <h3 style="color: var(--light); margin-bottom: 10px;">Game Title 1</h3>
-      <p style="color: #ccc;">A short description of this awesome game.</p>
-    </div>
-    <div style="background: #1e1e2f; padding: 20px; border-radius: 12px; text-align: center;">
-      <h3 style="color: var(--light); margin-bottom: 10px;">Game Title 2</h3>
-      <p style="color: #ccc;">Another fun game waiting for you.</p>
-    </div>
-    <!-- Add more game blocks here -->
-  </div>
+ <section id="games" style="padding: 100px 60px; background: #111;">
+  <h2 style="color: var(--primary); font-size: 36px; text-align: center; margin-bottom: 20px;">🎮 Our Games</h2>
+  <p style="color: #ccc; text-align: center;">Exciting games are waiting for you here. This is your playground!</p>
 </section>
-
   <section class="subscribe" id="contact">
     <h2>Stay Updated</h2>
     <form action="https://formspree.io/f/xwplaoee" method="POST">
@@ -258,5 +245,10 @@
   <footer>
     &copy; 2025 GameVerse. Play More. Win More.
   </footer>
+  <script>
+  document.getElementById('scrollToGames').addEventListener('click', function () {
+    document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
